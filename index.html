@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Shot By Kai | Photography</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  font-size: 48px;
+  letter-spacing: 4px;
+}
+
+.gold {
+  color: #d4af37;
+}
+
+section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+}
+
+.grid img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+button {
+  background: #d4af37;
+  border: none;
+  padding: 14px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background: #111;
+  color: white;
+  border: 1px solid #333;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1 class="gold">SHOT BY KAI</h1>
+  <p>Luxury • Editorial • Wedding • Portrait</p>
+  <button onclick="document.getElementById('booking').scrollIntoView()">Book Now</button>
+</header>
+
+<section>
+  <h2 class="gold">Portfolio</h2>
+  <div class="grid">
+    <img src="https://picsum.photos/600/800?1">
+    <img src="https://picsum.photos/600/800?2">
+    <img src="https://picsum.photos/600/800?3">
+    <img src="https://picsum.photos/600/800?4">
+  </div>
+</section>
+
+<section id="booking">
+  <h2 class="gold">Book a Shoot</h2>
+  <form action="https://formsubmit.co/shotbykaiiii@gmail.com" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="message" placeholder="Tell me about your shoot"></textarea>
+    <button type="submit">Send Booking Request</button>
+  </form>
+</section>
+
+<section>
+  <h2 class="gold">Contact</h2>
+  <p>Instagram: @shotbykaiiii</p>
+  <p>Email: shotbykaiiii@gmail.com</p>
+  <p>Location: Staten Island, NY</p>
+</section>
+
+</body>
+</html>
