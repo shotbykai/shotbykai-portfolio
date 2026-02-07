@@ -3,107 +3,267 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shot By Kai | Luxury Portrait & Boudoir Photography</title>
 
-<title>Shot By Kai | Photography</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-body {
-  margin: 0;
-  font-family: Helvetica, Arial, sans-serif;
-  background: #000;
-  color: #fff;
+:root{
+  --gold:#d4af37;
+  --bg:#000;
+  --text:#fff;
+  --muted: rgba(255,255,255,.78);
+  --shadow: rgba(0,0,0,.35);
 }
 
-header {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+*{ box-sizing:border-box; }
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter', sans-serif;
+  line-height:1.65;
 }
 
-h1 {
-  font-size: 48px;
-  letter-spacing: 4px;
+h1,h2,h3{
+  font-family:'Playfair Display', serif;
+  letter-spacing:1px;
+  margin:0 0 14px 0;
 }
 
-.gold {
-  color: #d4af37;
+a{ color:var(--gold); }
+
+section{
+  padding:100px 20px; /* premium spacing */
+  max-width:1100px;
+  margin:auto;
 }
 
-section {
-  padding: 60px 20px;
-  max-width: 1000px;
-  margin: auto;
+.gold{ color:var(--gold); }
+.muted{ color:var(--muted); }
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:0 20px;
+}
+.hero h1{
+  font-size:44px;
+  letter-spacing:3px;
+}
+.hero p{
+  margin:10px 0 0 0;
+  color:var(--muted);
+}
+.hero .sub{
+  margin-top:6px;
+  font-size:15px;
+  letter-spacing:.5px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 12px;
+/* BUTTONS */
+.btn{
+  display:inline-block;
+  margin-top:26px;
+  padding:14px 28px;
+  background:var(--gold);
+  color:#000;
+  text-decoration:none;
+  font-weight:700;
+  border-radius:999px;
+  box-shadow:0 10px 25px var(--shadow);
+}
+.btn:active{ transform:scale(.99); }
+
+/* Editorial text blocks (NOT centered) */
+.editorial{
+  max-width:620px;     /* magazine column width */
+  text-align:left;
 }
 
-.grid img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
+/* FEATURED GRID */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap:24px; /* premium spacing */
+  margin-top:34px;
+}
+.grid img{
+  width:100%;
+  height:340px;
+  object-fit:cover;
+  border-radius:8px;
+  transition: transform .6s ease, box-shadow .6s ease;
+}
+.grid img:hover{
+  transform:scale(1.04);
+  box-shadow:0 20px 40px var(--shadow);
 }
 
-button {
-  background: #d4af37;
-  border: none;
-  padding: 14px 30px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 20px;
+/* Instagram Grid */
+.ig-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap:12px;
+  margin-top:18px;
+}
+.ig-grid img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:8px;
+  transition: transform .6s ease, box-shadow .6s ease;
+}
+.ig-grid img:hover{
+  transform:scale(1.03);
+  box-shadow:0 18px 35px var(--shadow);
 }
 
-input, textarea {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  background: #111;
-  color: white;
-  border: 1px solid #333;
+/* Booking / Contact */
+.card{
+  border:1px solid rgba(212,175,55,.35);
+  border-radius:14px;
+  padding:26px;
+  background: rgba(255,255,255,.03);
+}
+.small{
+  font-size:14px;
+  color:rgba(255,255,255,.7);
+}
+
+/* Floating booking button */
+.floating-book{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:9999;
+  background:var(--gold);
+  color:#000;
+  padding:14px 18px;
+  border-radius:999px;
+  font-weight:800;
+  text-decoration:none;
+  box-shadow:0 10px 25px var(--shadow);
+}
+.floating-book:active{ transform:scale(.98); }
+
+footer{
+  text-align:center;
+  padding:40px 20px;
+  color:rgba(255,255,255,.6);
+  border-top:1px solid rgba(212,175,55,.25);
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1 class="gold">SHOT BY KAI</h1>
-  <p>Luxury • Editorial • Wedding • Portrait</p>
-  <button onclick="document.getElementById('booking').scrollIntoView()">Book Now</button>
-</header>
-
-<section>
-  <h2 class="gold">Portfolio</h2>
-  <div class="grid">
-    <img src="https://picsum.photos/600/800?1">
-    <img src="https://picsum.photos/600/800?2">
-    <img src="https://picsum.photos/600/800?3">
-    <img src="https://picsum.photos/600/800?4">
+<!-- HERO (keep centered for premium “cover” feel) -->
+<section class="hero">
+  <div>
+    <h1 class="gold">SHOT BY KAI</h1>
+    <p>Luxury Portrait & Boudoir Photography</p>
+    <p class="sub">Staten Island • New York</p>
+    <a href="#booking" class="btn">CHECK AVAILABILITY</a>
   </div>
 </section>
 
-<section id="booking">
-  <h2 class="gold">Book a Shoot</h2>
-  <form action="https://formsubmit.co/shotbykaiiii@gmail.com" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <textarea name="message" placeholder="Tell me about your shoot"></textarea>
-    <button type="submit">Send Booking Request</button>
-  </form>
+<!-- 3-line luxury intro -->
+<section>
+  <div class="editorial">
+    <p>A private photography experience designed to make you feel confident, powerful, and elevated.</p>
+    <p>Guided posing. Professional lighting. A relaxed, judgment-free environment.</p>
+    <p>Based in Staten Island, serving New York City and surrounding areas.</p>
+  </div>
 </section>
 
+<!-- Featured Work (6 money shots) -->
 <section>
-  <h2 class="gold">Contact</h2>
-  <p>Instagram: @shotbykaiiii</p>
-  <p>Email: shotbykaiiii@gmail.com</p>
-  <p>Location: Staten Island, NY</p>
+  <h2 class="gold">Featured Work</h2>
+  <p class="muted">A curated selection of recent sessions.</p>
+
+  <div class="grid">
+    <!-- Replace these filenames with your real uploads -->
+    <img src="photo1.jpg" alt="Featured photo 1">
+    <img src="photo2.jpg" alt="Featured photo 2">
+    <img src="photo3.jpg" alt="Featured photo 3">
+    <img src="photo4.jpg" alt="Featured photo 4">
+    <img src="photo5.jpg" alt="Featured photo 5">
+    <img src="photo6.jpg" alt="Featured photo 6">
+  </div>
+
+  <div style="margin-top:28px;">
+    <a href="#booking" class="btn">CHECK AVAILABILITY</a>
+  </div>
 </section>
+
+<!-- The Experience -->
+<section>
+  <div class="editorial">
+    <h2 class="gold">The Experience</h2>
+    <p>Every session is designed to feel private, relaxed, and fully guided.</p>
+    <p>From posing to lighting, you don’t need modeling experience — only the willingness to show up as yourself.</p>
+    <p>The goal isn’t just beautiful photos, but an experience that leaves you feeling confident long after the session ends.</p>
+  </div>
+</section>
+
+<!-- Safety / Guidance (filters time-wasters) -->
+<section>
+  <div class="editorial card">
+    <h2 class="gold">A Comfortable, Guided Experience</h2>
+    <p>Every session is private and fully guided from start to finish.</p>
+    <p>No modeling experience is needed — posing and direction are provided throughout the session.</p>
+    <p>Your comfort, privacy, and confidence come first.</p>
+  </div>
+</section>
+
+<!-- Instagram Grid -->
+<section id="instagram">
+  <h2 class="gold">Instagram</h2>
+  <p class="muted">Follow <a href="https://instagram.com/shotbykaiiii" target="_blank" rel="noopener">@shotbykaiiii</a></p>
+
+  <div class="ig-grid">
+    <!-- Upload ig1.jpg ... ig6.jpg to your repo -->
+    <a href="https://instagram.com/shotbykaiiii" target="_blank" rel="noopener"><img src="ig1.jpg" alt="Instagram photo 1"></a>
+    <a href="https://instagram.com/shotbykaiiii" target="_blank" rel="noopener"><img src="ig2.jpg" alt="Instagram photo 2"></a>
+    <a href="https://instagram.com/shotbykaiiii" target="_blank" rel="noopener"><img src="ig3.jpg" alt="Instagram photo 3"></a>
+    <a href="https://instagram.com/shotbykaiiii" target="_blank" rel="noopener"><img src="ig4.jpg" alt="Instagram photo 4"></a>
+    <a href="https://instagram.com/shotbykaiiii" target="_blank" rel="noopener"><img src="ig5.jpg" alt="Instagram photo 5"></a>
+    <a href="https://instagram.com/shotbykaiiii" target="_blank" rel="noopener"><img src="ig6.jpg" alt="Instagram photo 6"></a>
+  </div>
+
+  <div style="margin-top:28px;">
+    <a href="#booking" class="btn">CHECK AVAILABILITY</a>
+  </div>
+</section>
+
+<!-- Booking / Contact -->
+<section id="booking">
+  <div class="editorial card">
+    <h2 class="gold">Check Availability & Booking</h2>
+    <p>Sessions are limited each month to maintain a private, guided experience.</p>
+
+    <p class="small" style="margin-top:18px;">
+      Instagram: <a href="https://instagram.com/shotbykaiiii" target="_blank" rel="noopener">@shotbykaiiii</a><br>
+      Email: <a href="mailto:shotbykaiiii@gmail.com">shotbykaiiii@gmail.com</a><br>
+      Location: Staten Island, NY
+    </p>
+
+    <a class="btn" style="margin-top:18px;" href="mailto:shotbykaiiii@gmail.com?subject=Session%20Inquiry%20-%20Shot%20By%20Kai&body=Name:%0D%0AService:%0D%0ADate:%0D%0ALocation:%0D%0ADetails:%0D%0A">
+      SEND INQUIRY
+    </a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Shot By Kai • Staten Island, NY
+</footer>
+
+<a class="floating-book" href="#booking">CHECK AVAILABILITY</a>
 
 </body>
 </html>
